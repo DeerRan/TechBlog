@@ -22,7 +22,7 @@ const sess = {
 };
 
 // Enables the use of helpers
-const hbs = handlebars.create({ helpers });
+const hbs = exphbs.create({ helpers });
 
 // Defining template engine (What drives the templates in, i.e. Handlebars in this case).
 app.engine('handlebars', hbs.engine);

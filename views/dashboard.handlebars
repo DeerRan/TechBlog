@@ -1,0 +1,20 @@
+<div class="content">
+    <h1 class="contentheader">
+        Your Dashboard
+    </h1>
+
+    <div class="contentcontent">
+        {{#each post}}
+            <a class="row link postlink" href="/dashboard/edit/{{id}}">
+                <span class="col-3">{{title}}</span>
+                <span class="col-3 date">{{format_date createdAt}}</span>
+            </a>
+        {{/each}}
+    </div>
+
+    <a class="link newpostlink" href="/dashboard/new">
+        <div class="postbtn">
+            + New Post
+        </div>
+    </a>
+</div>

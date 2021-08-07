@@ -67,7 +67,7 @@ body {
     border-radius: 5px;
     border-color: rgba(103, 99, 98);
     border-width: 5px;
-    height: 350px;
+    height: auto;
     margin: auto;
     padding: 0;
 }
@@ -75,7 +75,7 @@ body {
 .contentheader {
     background-color: rgba(103, 99, 98);
     color: rgba(244, 224, 138);
-    height: 25%;
+    height: 75px;
     padding-left: 20px;
     padding-top: 15px;
     margin: 0;
@@ -87,7 +87,8 @@ h1 {
 
 .contentcontent {
     padding: 20px;
-    height: 75%;
+    min-height: 75%;
+    height: auto;
 }
 
 label {
@@ -111,7 +112,7 @@ input:focus {
     border: 3px solid rgba(103, 99, 98);
 }
 
-.btn, .signupbtn {
+.btn, .altbtn, .postbtn {
     border-radius: 5px;
     margin: 20px 12px 20px 12px;
     padding: 0;
@@ -124,14 +125,65 @@ input:focus {
     transition: 0.5s;
 }
 
-.btn:hover, .signupbtn:hover {
+.btn:hover, .altbtn:hover, .newpostlink:hover .postbtn {
     color: rgba(205, 171, 82);
     text-decoration: none;
 }
 
-.signupbtn {
+.altbtn {
     text-align: center;
     padding: 6px;
     text-decoration: none;
 }
 
+/* Blog styling */
+.blogpost {
+    height: auto;
+    border-style: solid;
+    border-radius: 5px;
+    border-color: rgba(103, 99, 98);
+    border-width: 5px;
+    margin: 20px auto 20px auto;
+    padding: 0;
+}
+
+.blogheader {
+    padding: 10px 10px 10px 25px;
+    background-color:rgba(103, 99, 98);
+    color: rgba(244, 224, 138);
+}
+
+.blogbody {
+    padding: 10px 10px 10px 25px;
+}
+
+.posts {
+    width: 100%;
+}
+
+.postlink {
+    padding: 25px;
+    background-color:rgba(103, 99, 98);
+    color: rgba(244, 224, 138);
+    border-radius: 5px;
+    height: 80px;
+    margin: 20px;
+}
+
+span {
+    margin: 10px;
+}
+
+.date {
+    font-size: 20px;
+}
+
+.postbtn {
+    margin: auto;
+    height: auto;
+    width: auto;
+    padding: 20px;
+    background-color:rgba(103, 99, 98);
+    margin: 20px;
+    border-radius: 5px;
+}
