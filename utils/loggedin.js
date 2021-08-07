@@ -4,6 +4,6 @@ const loggedin = (req, res, next) => {
     } else {
       next();
     }
-  };
+};
   
-  module.exports = loggedin;
+module.exports = loggedin;

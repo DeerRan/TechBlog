@@ -18,6 +18,30 @@ router.get('/', async (req, res) => {
   }
 })
 
+router.get('/dashboard', async (req, res) => {
+  try {
+    const userDash = await Post.findAll({
+      where: {
+        userId: req.session.userId,
+      },
+    });
+
+    const userposts = userDash.map((post) => post.get({ plain: true }));
+
+    res.render('dashboard', { userposts });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+})
+
+router.get('/dashboard/new', (req, res) => {
+  try {
+    res.render('newpost');
+  } catch (err) {
+    res.status(500).json(err);
+  }
+})
+
 router.get('/post/:id', async (req, res) => {
   try {
     const postData = await Post.findByPk(req.params.id, {
@@ -45,19 +69,19 @@ router.get('/post/:id', async (req, res) => {
 })
 
 router.get('/login', (req, res) => {
-    // if (req.session.loggedIn) {
-    //   res.redirect('/');
-    //   return;
-    // }
+    if (req.session.loggedIn) {
+      res.redirect('/');
+      return;
+    }
   
     res.render('login');
 });
 
 router.get('/signup', (req, res) => {
-    // if (req.session.loggedIn) {
-    //   res.redirect('/');
-    //   return;
-    // }
+    if (req.session.loggedIn) {
+      res.redirect('/');
+      return;
+    }
   
     res.render('signup');
 });

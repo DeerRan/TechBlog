@@ -21,6 +21,8 @@ const sess = {
   })
 };
 
+app.use(session(sess));
+
 // Enables the use of helpers
 const hbs = exphbs.create({ helpers });
 

@@ -1,0 +1,55 @@
+<div class="content">
+    <div class="postheadrow row">
+        <h1 class="contentheader col-8">
+                {{post.title}}
+        </h1>
+        <h1 class="headerdate col-4">
+            {{post.User.username}} - {{format_date post.createdAt}}
+        </h1>
+    </div>
+
+    <div class="contentcontent">
+        <div class="blogbody">
+            {{post.body}}
+        </div>
+    </div>
+</div>
+
+{{#if post.Comments}}
+    <div class="commentsdivider"><h1>Comments -</h1></div>
+
+    {{#each post.Comments}}
+        <div class="commentcontent">
+            <div class='row commentheadrow'>
+                <h1 class="commentheader col-10">
+                    {{User.username}}
+                </h1>
+
+                <h1 class="commentdate col-2">{{format_date createdAt}}</h1>
+            </div>
+
+            <div class="contentcontent">
+                <div class="commentbody">
+                    {{body}}
+                </div>
+            </div>
+        </div>
+    {{/each}}
+
+    <div class="lvcommentdiv">
+        <h1 class="contentheader">
+            {{post.title}}
+        </h1>
+
+        <div class="formdiv">
+            <form id="commentform" class="form">
+                <label class="label" for="postbody">Comment body</label>
+                <textarea name="commentbody" class="textarea"></textarea>
+
+                <button type="submit" class="btn">Create</button>
+            </form>
+        </div>
+    </div>
+{{/if}}
+
+<script src="/js/comment.js"></script>
