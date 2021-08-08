@@ -5,6 +5,7 @@
 - [README](#datatitle)
 - [Table of Contents](#table-of-contents)
 - [Description](#description)
+- [Screenshots](#screenshots)
 - [Demo](#demo)
 - [Installation](#installation)
 - [Usage](#usage)
@@ -16,8 +17,12 @@
 - [Deployable Link](#deployable-link)
 ## Description  
 Small techblog where you can post and comment with other people
+## Screenshots
+![Screenshot of program](https://github.com/DeerRan/E-commerceBackend/blob/main/Assets/Screenshot1.png?raw=true)
+![Screenshot of program](https://github.com/DeerRan/E-commerceBackend/blob/main/Assets/Screenshot2.png?raw=true)
+![Screenshot of program](https://github.com/DeerRan/E-commerceBackend/blob/main/Assets/Screenshot3.png?raw=true)
 ## Demo
-
+N/A
 ## Installation
 Grab it off github, run "npm install" and then run "npm run start"
 ## Usage
@@ -33,4 +38,4 @@ Link to my GitHub profile: https://github.com/DeerRan
 ## License
 This project is covered by the Unlicense license.
 ## Deployable Link
-
+I really tried, I just could not wrap my head around how to get past the database issue with heroku
