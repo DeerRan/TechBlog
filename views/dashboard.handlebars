@@ -3,12 +3,16 @@
         Your Dashboard
     </h1>
 
-    <div class="contentcontent">
-        {{#each post}}
-            <a class="row link postlink" href="/dashboard/edit/{{id}}">
-                <span class="col-3">{{title}}</span>
+    <div class="contentcontent row">
+        {{#each userposts }}
+        <div class='userpostdiv row justify-content-center'>
+            <a class="col-10 userposts" href="/post/{{id}}">
+                <span id="usertitle" class="col-3">{{title}}</span>
                 <span class="col-3 date">{{format_date createdAt}}</span>
             </a>
+            <button type="button" id="deletebtn" class="btn col-1">&#8722</button>
+        </div>
+        <p id="hide">{{id}}</p>
         {{/each}}
     </div>
 
@@ -17,4 +21,7 @@
             + New Post
         </div>
     </a>
+
 </div>
+
+<script src="/js/delete.js"></script>

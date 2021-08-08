@@ -1,8 +1,8 @@
 const signupFormHandler = async function(event) {
     event.preventDefault();
   
-    const username = document.getElementById('userlogin');
-    const password = document.getElementById('passwordlogin');
+    const username = document.querySelector('#userlogin');
+    const password = document.querySelector('#passwordlogin');
   
     const response = await fetch('/api/user', {
       method: 'POST',
@@ -14,13 +14,12 @@ const signupFormHandler = async function(event) {
     });
   
     if (response.ok) {
-      document.location.replace('/dashboard');
+      document.location.replace('/');
     } else {
       alert("Couldn't sign up");
     }
 };
-  
-document.getElementById('signupbtn')
 
-document.addEventListener('submit', signupFormHandler);
-  
+document
+  .querySelector('#signupform')
+  .addEventListener('submit', signupFormHandler);

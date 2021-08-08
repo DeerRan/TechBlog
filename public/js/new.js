@@ -16,6 +16,4 @@ const newFormHandler = async function(event) {
   document.location.replace('/dashboard');
 };
 
-document.querySelector('#newform')
-  
-document.addEventListener('submit', newFormHandler);
+document.querySelector('#newform').addEventListener('submit', newFormHandler);

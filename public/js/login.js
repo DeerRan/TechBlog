@@ -1,8 +1,8 @@
 const loginFormHandler = async function(event) {
   event.preventDefault();
 
-  const username = document.getElementById('userlogin');
-  const password = document.getElementById('passwordlogin');
+  const username = document.querySelector('#usernamelogin');
+  const password = document.querySelector('#passwordlogin');
 
   const response = await fetch('/api/user/login', {
     method: 'POST',
@@ -14,11 +14,12 @@ const loginFormHandler = async function(event) {
   });
 
   if (response.ok) {
-    document.location.replace('/dashboard');
+    document.location.replace('/');
   } else {
-    alert("Couldn't logout");
+    alert("Couldn't login");
   }
 };
 
-document.querySelector('#loginform')
-document.addEventListener('submit', loginFormHandler);
+document
+  .querySelector('#loginform')
+  .addEventListener('submit', loginFormHandler);

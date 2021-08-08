@@ -1,5 +1,5 @@
 module.exports = {
-    format_date: () => {
-      return moment().calendar();
-    }
+  format_date: date => {
+    return `${date.getMonth() + 1}/${date.getDate()}/${date.getFullYear()}`;
+  }
 };

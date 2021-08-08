@@ -1,5 +1,6 @@
 const router = require("express").Router();
 const { Post, Comment, User } = require('../models/');
+const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
   try {
@@ -15,30 +16,6 @@ router.get('/', async (req, res) => {
   }
   catch (err) {
     res.status(500).json(err)
-  }
-})
-
-router.get('/dashboard', async (req, res) => {
-  try {
-    const userDash = await Post.findAll({
-      where: {
-        userId: req.session.userId,
-      },
-    });
-
-    const userposts = userDash.map((post) => post.get({ plain: true }));
-
-    res.render('dashboard', { userposts });
-  } catch (err) {
-    res.status(500).json(err);
-  }
-})
-
-router.get('/dashboard/new', (req, res) => {
-  try {
-    res.render('newpost');
-  } catch (err) {
-    res.status(500).json(err);
   }
 })
 
@@ -85,5 +62,31 @@ router.get('/signup', (req, res) => {
   
     res.render('signup');
 });
+
+
+router.get('/dashboard', withAuth, async (req, res) => {
+  try {
+    const userDash = await Post.findAll({
+      where: {
+        userId: req.session.userId,
+      },
+    });
+
+    const userposts = userDash.map((post) => post.get({ plain: true }));
+
+    res.render('dashboard', { userposts });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+})
+
+router.get('/dashboard/new', withAuth, (req, res) => {
+  try {
+    res.render('newpost');
+  } catch (err) {
+    res.status(500).json(err);
+  }
+})
+
 
 module.exports = router;
