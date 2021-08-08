@@ -18,9 +18,9 @@
 ## Description  
 Small techblog where you can post and comment with other people
 ## Screenshots
-![Screenshot of program](https://github.com/DeerRan/E-commerceBackend/blob/main/Assets/Screenshot1.png?raw=true)
-![Screenshot of program](https://github.com/DeerRan/E-commerceBackend/blob/main/Assets/Screenshot2.png?raw=true)
-![Screenshot of program](https://github.com/DeerRan/E-commerceBackend/blob/main/Assets/Screenshot3.png?raw=true)
+![Screenshot of program](https://github.com/DeerRan/TechBlog/blob/main/Assets/Screenshot1.png?raw=true)
+![Screenshot of program](https://github.com/DeerRan/TechBlog/blob/main/Assets/Screenshot2.png?raw=true)
+![Screenshot of program](https://github.com/DeerRan/TechBlog/blob/main/Assets/Screenshot3.png?raw=true)
 ## Demo
 N/A
 ## Installation
